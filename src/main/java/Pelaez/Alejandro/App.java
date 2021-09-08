@@ -8,10 +8,14 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args)
     {
-        System.out.print("What is your name?");
+        final int legalAge = 16;
+        System.out.print("What is your age? ");
         Scanner input = new Scanner(System.in);
-        String name = input.next();
-        System.out.print("Hello " + name + ", nice to meet you!");
-        System.out.print("\n");
+        int userAge = input.nextInt();
+
+        String notOldEnough = "You are not old enough to legally drive.";
+        String oldEnough = "You are old enough to legally drive.";
+
+        System.out.println(userAge >= legalAge ? oldEnough : notOldEnough);
     }
 }
